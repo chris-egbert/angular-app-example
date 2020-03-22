@@ -1,0 +1,17 @@
+<div class="movie-list">
+    <div class="movie-list-header">
+        <h1>Movies</h1>
+    </div>
+
+    <div class="movie-list-search">
+
+    </div>
+
+    <div class="movie-list-results">
+        <div class="movie-list-entry"
+             *ngFor="let movieSummary of movieList$ | async"
+        >
+            {{movieSummary | json}}
+        </div>
+    </div>
+</div>
