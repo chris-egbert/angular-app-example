@@ -1,17 +1,27 @@
 <div class="movie-list">
-    <div class="movie-list-header">
-        <h1>Movies</h1>
+    <div class="movie-list-header mt-2 ml-2">
+        <h1 class="display-1">Movies</h1>
     </div>
 
     <div class="movie-list-search">
 
     </div>
 
-    <div class="movie-list-results">
-        <div class="movie-list-entry"
-             *ngFor="let movieSummary of movieList$ | async"
-        >
-            {{movieSummary | json}}
+    <div class="movie-list-results container-fluid">
+        <div class="row">
+            <div class="movie-list-entry col-sm-6 col-md-4"
+                 *ngFor="let movieSummary of movieList$ | async"
+            >
+                <div class="d-flex flex-column align-items-center">
+                    <img class="img-thumbnail"
+                         [alt]="'Movie Poster of ' + movieSummary.Title"
+                         [src]="movieSummary.Poster"
+                    />
+                    <div>
+                        {{movieSummary.Title}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
